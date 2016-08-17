@@ -1,0 +1,17 @@
+<h1>New List Item</h1>
+
+<%= form_for @list_item do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, required: true %> <br> <br>
+	<%= f.label :description %>
+	<%= f.text_field :description %> <br> <br>
+	<%= f.label :priority %>
+	<%= f.number_field :priority, required: true %> <br> <br>
+	<%= f.label :status %>
+	<%= f.radio_button :status, 'Not Started', required: true %> Not Started
+	<%= f.radio_button :status, 'In-Progress', required: true %> In-Progress
+	<%= f.radio_button :status, 'Complete', required: true %> Complete <br> <br>
+	<%= f.submit %>
+
+<% end %>
+

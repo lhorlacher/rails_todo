@@ -1,0 +1,76 @@
+<p> <%= link_to 'New List Item', new_list_item_path %> </p>
+
+<h1>Not Started </h1>
+	<table>
+		<thead>
+			<th style='text-align: left'>Name</th>
+			<th style='text-align: left'>| Description</th>
+			<th style='text-align: left'>| Priority</th>
+			<th style='text-align: left'>| Status</th>
+			<th></th>
+			<th></th>
+
+		</thead>
+		<tbody>
+			<% @list_items_ns.each do |item| %>
+				<tr>
+					<td> <h3> <%= item.name %> </h3> </td>
+					<td> | <%= item.description %> </td>
+					<td> | <%= item.priority %> </td>
+					<td> | <%= item.status %> </td>
+					<td> <%= button_to 'Edit List Item', edit_list_item_path(item), method: :get %> </td>
+					<td> <%= button_to 'Destroy Item', list_item_path(item), method: :delete %> </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+<h1> In-Progress </h1>
+	<table>
+		<thead>
+			<th style='text-align: left'>Name</th>
+			<th style='text-align: left'>| Description</th>
+			<th style='text-align: left'>| Priority</th>
+			<th style='text-align: left'>| Status</th>
+			<th></th>
+			<th></th>
+
+		</thead>
+		<tbody>
+			<% @list_items_ip.each do |item| %>
+				<tr>
+					<td> <h3> <%= item.name %> </h3> </td>
+					<td> | <%= item.description %> </td>
+					<td> | <%= item.priority %> </td>
+					<td> | <%= item.status %> </td>
+					<td> <%= button_to 'Edit List Item', edit_list_item_path(item), method: :get %> </td>
+					<td> <%= button_to 'Destroy Item', list_item_path(item), method: :delete %> </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+<h1> Completed </h1>
+	<table>
+		<thead>
+			<th style='text-align: left'>Name</th>
+			<th style='text-align: left'>| Description</th>
+			<th style='text-align: left'>| Priority</th>
+			<th style='text-align: left'>| Status</th>
+			<th></th>
+			<th></th>
+
+		</thead>
+		<tbody>
+			<% @list_items_c.each do |item| %>
+				<tr>
+					<td> <h3> <%= item.name %> </h3> </td>
+					<td> | <%= item.description %> </td>
+					<td> | <%= item.priority %> </td>
+					<td> | <%= item.status %> </td>
+					<td> <%= button_to 'Edit List Item', edit_list_item_path(item), method: :get %> </td>
+					<td> <%= button_to 'Destroy Item', list_item_path(item), method: :delete %> </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
